@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+
+	<p id="demo"></p>
+
+
+	<script type="text/javascript">
+
+		var naissance = {
+			born: 2000,
+			actual: 2020,
+			birthday: function() {
+				return this.actual - this.born;
+
+
+			}
+		}
+		console.log(naissance.birthday())
+
+		document.write("<br>")
+
+		var phrase = {
+			sentence: "I am a hero from World of Warcraft",
+			numero: 12,
+
+			truncate: function() {
+
+				if (this.sentence.length > 10) {
+					return this.sentence.substring(0,10)
+
+				}
+
+				else {
+					return this.sentence
+				}
+
+			}
+		}
+		console.log(phrase.truncate() + 12)
+
+		document.write("<br>")
+
+
+			// var information = {
+			// 	salut: "hi am"
+			// 	vorname: "mia"
+			// 	surname: "Bebon",
+			// 	suis: "i am",
+			// 	age: 100,
+			// 	phrase: "years old and i am a future programmer"
+
+			// presentation: function(salut, vorname, surname, suis, age, phrase) {
+			// 	console.log(arguments[0] + arguments[1] + arguments[2] + arguments[3] + arguments[4] + arguments[5])
+			// }
+
+
+			// 				}
+
+			//  console.log(information.presentation())
+
+			document.write("<br>")
+
+			var nilHotel = new HotelConstructor('nil', 80, 42,10,3);
+
+			var euphrateHotel = new HotelConstructor('euphrate', 78, 56,7,4);
+			var deadseaHotel = new HotelConstructor('dear sea', 48, 32,6,9);
+
+			
+			function HotelConstructor(name, rooms, booked, free, noway) {
+				this.name = name;
+				this.rooms = rooms;
+				this.booked = booked;
+				this.nightin = free;
+				this.nightout = noway;
+				this.av = Math.floor((Math. random() * 12) +  1)
+
+				this.checkAvailability = function() {
+
+					if (this.av < 3) {
+						console.log("Sorry, no free room for" + this.av + "nights")
+					}
+					else if(this.av >5) {
+
+						console.log("all occupy")
+					}
+					else { console.log("I/ll reserve")
+						;}
+					return this.nightout - this.nightin
+				};
+
+				this.showavailability = function() {
+					return this.nightout - this.nightin
+				}
+			}
+			console.log(euphrateHotel.checkAvailability())
+
+			document.getElementById('demo').innerHTML = nilHotel.checkAvailability()
+
+
+			
+
+
+
+
+
+
+		</script>
+
+
+	</body>
+	</html>

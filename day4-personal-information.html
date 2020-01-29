@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Personal Information</title>
+</head>
+<body>
+
+<form>
+	<p>Name:</p>
+	<p><input type="text" name="name" id="firstname"></p>
+	<p>Surname:</p>
+	<p><input type="text" name="surname" id="surname"></p>
+	<p>Age:</p>
+	<p><input type="number" name="age" id="age"></p>
+	<p>Description:</p>
+	<p>
+		<textarea rows="4" cols="20" id="description">
+		</textarea>
+	</p>
+	<p>
+		<input type="submit" name="submit" id="submitButton" value="Submit">
+	</p>
+
+	<p id="outputArea"></p>
+</form>
+<script>
+	
+	document.getElementById('submitButton').addEventListener('click', function(event) {
+		event.preventDefault();
+		let inputName = document.getElementById('firstname').value;
+		let inputSurname = document.getElementById('surname').value;
+		let inputAge = document.getElementById('age').value;
+		let inputDescription = document.getElementById('description').value;
+		makeStatement(inputName,inputSurname,inputAge,inputDescription);
+	})
+
+	function makeStatement(name,surname,age,description) {
+		let outputStatement = 'Hi ' + name + ' ' + surname + ' I am ' + age + ' years old and I am a ' + description;
+		document.getElementById('outputArea').innerHTML = outputStatement;
+	}
+
+</script>
+</body>
+</html>
